@@ -260,7 +260,7 @@ sd_day_inflammation <- apply(dat, 2, sd)
 plot(sd_day_inflammation)
 ```
 
-# Lesson 2: Analyising Multiple Data Sets
+# Lesson 2: Analysing Multiple Data Sets
 
 We have several data sets to process and analyse. To get a vector with available file names, we can use the `list.files` function:
 ```
@@ -363,12 +363,12 @@ for ( square_number in seq(1, 64) )
 }
 # Compare our result with the mathematical solution
 total_grain_number
-2^64 - 1 # Note: the term -1 can be ommitted, it will not change the result
+2^64 - 1 # Note: the term -1 will not change the result due to limited numerical precision
 ```
 
 ## Processing Multiple Files
 
-Use the `list.files` function to list all csv files or inflammation data files in the `data` directory:
+Use the `list.files` function to list all `csv` files or `inflammation` data files in the `data` directory:
 ```{r}
 list.files(path = "data", pattern = "csv", full.names = TRUE)
 list.files(path = "data", pattern = "inflammation", full.names = TRUE)
@@ -784,7 +784,7 @@ analyse <- function(pattern, threshold, outputfilename)
 args <- commandArgs(trailingOnly = TRUE)
 
 # Check if all parameters were supplied - if not, issue an
-# error message. We expect exactly 2 arguments.
+# error message. We expect exactly 3 arguments.
 # Note: we could also use "stopifnot" here, but it is helpful
 # for users to provide additional usage information.
 if ( length(args) == 3)

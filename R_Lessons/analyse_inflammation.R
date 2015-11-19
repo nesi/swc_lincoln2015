@@ -28,7 +28,7 @@ analyse <- function(pattern, threshold, outputfilename)
 args <- commandArgs(trailingOnly = TRUE)
 
 # Check if all parameters were supplied - if not, issue an
-# error message. We expect exactly 2 arguments.
+# error message. We expect exactly 3 arguments.
 # Note: we could also use "stopifnot" here, but it is helpful
 # for users to provide additional usage information.
 if ( length(args) == 3)
