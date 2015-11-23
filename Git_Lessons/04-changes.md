@@ -102,7 +102,7 @@ Git takes everything we have told it to save by using `git add`
 and stores a copy permanently inside the special `.git` directory.
 This permanent copy is called a [commit](reference.html#commit)
 (or [revision](reference.html#revision)) and its short identifier is `f22b25e`
-(Your commit may have another identifier.)
+(Your commit may have a different identifier.)
 
 We use the `-m` flag (for "message")
 to record a short, descriptive, and specific comment that will help us remember later on what we did and why.
@@ -115,7 +115,7 @@ changes made in the commit.  If you want to go into more detail, add
 a blank line between the summary line and your additional notes.
 
 
-If we run `git status` now:
+If we run `git status` now, it tells us everything is up to date:
 
 ~~~ {.bash}
 $ git status
@@ -125,9 +125,7 @@ $ git status
 nothing to commit, working directory clean
 ~~~
 
-it tells us everything is up to date.
-If we want to know what we've done recently,
-we can ask Git to show us the project's history using `git log`:
+If we want to know what we've done recently, we can ask Git to show us the project's history using `git log`:
 
 ~~~ {.bash}
 $ git log
@@ -159,7 +157,7 @@ and the log message Git was given when the commit was created.
 
 Now suppose Dracula adds more information to the file.
 (Again, we'll edit with `nano` and then `cat` the file to show its contents;
-you may use a different editor, and don't need to `cat`.)
+you may use a different editor, and the `cat` command is optional.)
 
 ~~~ {.bash}
 $ nano mars.txt
@@ -286,10 +284,7 @@ but not yet committed.
 > which is kind of like gathering *everyone* for the picture!
 > However, it's almost always better to
 > explicitly add things to the staging area, because you might
-> commit changes you forgot you made. (Going back to snapshots,
-> you might get the extra with incomplete makeup walking on
-> the stage for the snapshot because you used `-a`!)
-> Try to stage things manually,
+> commit changes you forgot you made. Try to stage things manually,
 > or you might find yourself searching for "git undo commit" more
 > than you would like!
 
@@ -439,12 +434,6 @@ repository (`git commit`):
 >     $ git commit -m myfile.txt "my recent changes"
 >     ~~~
 
-> ## `bio` Repository {.challenge}
->
-> Create a new Git repository on your computer called `bio`.
-> Write a three-line biography for yourself in a file called `me.txt`,
-> commit your changes,
-> then modify one line, add a fourth line, and display the differences
-> between its updated state and its original state.
+Next: [Exploring History](05-history.html)
 
 [commit-messages]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html

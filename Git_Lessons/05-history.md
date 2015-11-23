@@ -10,6 +10,13 @@ minutes: 25
 > *   Compare various versions of tracked files.
 > *   Restore old versions of files.
 
+Git history can be viewed as a chain of commits.
+The most recent end of the chain is referred to as `HEAD`;
+we can refer to previous commits using the `~` notation,
+so `HEAD~1` (pronounced "head minus one")
+means "the previous commit",
+while `HEAD~123` goes back 123 commits from where we are now.
+
 If we want to see what we changed at different steps, we can use `git diff`
 again, but with the notation `HEAD~1`, `HEAD~2`, and so on, to refer to old
 commits:
@@ -41,16 +48,8 @@ index df0654a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity
 ~~~
 
-In this way,
-we can build up a chain of commits.
-The most recent end of the chain is referred to as `HEAD`;
-we can refer to previous commits using the `~` notation,
-so `HEAD~1` (pronounced "head minus one")
-means "the previous commit",
-while `HEAD~123` goes back 123 commits from where we are now.
-
 We can also refer to commits using
-those long strings of digits and letters
+commit hashes which appear as long strings of digits and letters
 that `git log` displays.
 These are unique IDs for the changes,
 and "unique" really does mean unique:
@@ -100,6 +99,9 @@ Let's suppose we accidentally overwrite our file:
 
 ~~~ {.bash}
 $ nano mars.txt
+# ...
+# ... Make changes to the file and save it
+# ...
 $ cat mars.txt
 ~~~
 ~~~ {.output}
@@ -158,15 +160,14 @@ recent commit (`HEAD~1`), which is commit `f22b25e`:
 
 ![Git Checkout](fig/git-checkout.svg)
 
-So, to put it all together:
+Putting it all together:
 
 > ## How Git works, in cartoon form {.callout}
 > ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
 
 > ## Simplifying the Common Case {.callout}
 >
-> If you read the output of `git status` carefully,
-> you'll see that it includes this hint:
+> As you can see the output of `git status` includes this hint:
 >
 > ~~~ {.bash}
 > (use "git checkout -- <file>..." to discard changes in working directory)
@@ -220,3 +221,5 @@ moving backward and forward in time becomes much easier.
 >     $ git checkout <unique ID of last commit> data_cruncher.py
 >     ~~~
 > 5. Both 2 & 4
+
+Next: [Ignoring Things](06-ignore.html)

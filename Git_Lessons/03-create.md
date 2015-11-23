@@ -77,3 +77,6 @@ nothing to commit (create/copy files and use "git add" to track)
 > 
 > Why is it a bad idea to do this?
 > How can Dracula "undo" his last `git init`?
+
+Next: [Tracking Changes](04-changes.html)
+

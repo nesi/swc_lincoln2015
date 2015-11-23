@@ -3,14 +3,15 @@ layout: page
 title: Version Control with Git
 ---
 
-Wolfman and Dracula have been hired by Universal Missions (a space
-services spinoff from Euphoric State University) to investigate if it
-is possible to send their next planetary lander to Mars.  They want to
-be able to work on the plans at the same time, but they have run into
-problems doing this in the past.  If they take turns, each one will
-spend a lot of time waiting for the other to finish, but if they work
-on their own copies and email changes back and forth things will be
-lost, overwritten, or duplicated.
+We've all been in this situation before: it seems ridiculous to have multiple
+nearly-identical versions of the same document. Some word processors let us deal
+with this a little better, such as Microsoft Word's "Track Changes" or Google Docs'
+version history. Even if you aren't collaborating with other people, automated
+version control is much better than this situation:
+
+[![Piled Higher and Deeper by Jorge Cham, http://www.phdcomics.com](fig/phd101212s.gif)](http://www.phdcomics.com)
+
+"Piled Higher and Deeper" by Jorge Cham, http://www.phdcomics.com
 
 A colleague suggests using [version control](reference.html#version-control) to
 manage their work. Version control is better than mailing files back and forth:
@@ -73,3 +74,4 @@ to be shared can and should be stored in a version control system.
 *   [Reference](reference.html)
 *   [Discussion](discussion.html)
 *   [Instructor's Guide](instructors.html)
+
