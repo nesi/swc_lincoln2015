@@ -77,14 +77,14 @@ nothing added to commit but untracked files present (use &quot;git add&quot; to 
 <pre class="output"><code>[master (root-commit) f22b25e] Start notes on Mars as a base
  1 file changed, 1 insertion(+)
  create mode 100644 mars.txt</code></pre>
-<p>When we run <code>git commit</code>, Git takes everything we have told it to save by using <code>git add</code> and stores a copy permanently inside the special <code>.git</code> directory. This permanent copy is called a <a href="reference.html#commit">commit</a> (or <a href="reference.html#revision">revision</a>) and its short identifier is <code>f22b25e</code> (Your commit may have another identifier.)</p>
+<p>When we run <code>git commit</code>, Git takes everything we have told it to save by using <code>git add</code> and stores a copy permanently inside the special <code>.git</code> directory. This permanent copy is called a <a href="reference.html#commit">commit</a> (or <a href="reference.html#revision">revision</a>) and its short identifier is <code>f22b25e</code> (Your commit may have a different identifier.)</p>
 <p>We use the <code>-m</code> flag (for “message”) to record a short, descriptive, and specific comment that will help us remember later on what we did and why. If we just run <code>git commit</code> without the <code>-m</code> option, Git will launch <code>nano</code> (or whatever other editor we configured as <code>core.editor</code>) so that we can write a longer message.</p>
 <p><a href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">Good commit messages</a> start with a brief (&lt;50 characters) summary of changes made in the commit. If you want to go into more detail, add a blank line between the summary line and your additional notes.</p>
-<p>If we run <code>git status</code> now:</p>
+<p>If we run <code>git status</code> now, it tells us everything is up to date:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> status</code></pre>
 <pre class="output"><code># On branch master
 nothing to commit, working directory clean</code></pre>
-<p>it tells us everything is up to date. If we want to know what we’ve done recently, we can ask Git to show us the project’s history using <code>git log</code>:</p>
+<p>If we want to know what we’ve done recently, we can ask Git to show us the project’s history using <code>git log</code>:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> log</code></pre>
 <pre class="output"><code>commit f22b25e3233b4645dabd0d81e651fe074bd8e73b
 Author: Vlad Dracula &lt;vlad@tran.sylvan.ia&gt;
@@ -100,7 +100,7 @@ Date:   Thu Aug 22 09:51:46 2013 -0400
 <p>If we run <code>ls</code> at this point, we will still see just one file called <code>mars.txt</code>. That’s because Git saves information about files’ history in the special <code>.git</code> directory mentioned earlier so that our filesystem doesn’t become cluttered (and so that we can’t accidentally edit or delete an old version).</p>
 </div>
 </aside>
-<p>Now suppose Dracula adds more information to the file. (Again, we’ll edit with <code>nano</code> and then <code>cat</code> the file to show its contents; you may use a different editor, and don’t need to <code>cat</code>.)</p>
+<p>Now suppose Dracula adds more information to the file. (Again, we’ll edit with <code>nano</code> and then <code>cat</code> the file to show its contents; you may use a different editor, and the <code>cat</code> command is optional.)</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
 $ <span class="kw">cat</span> mars.txt</code></pre>
 <pre class="output"><code>Cold and dry, but everything is my favorite color
@@ -154,7 +154,7 @@ $ <span class="kw">git</span> commit -m <span class="st">&quot;Add concerns abou
 <h2><span class="glyphicon glyphicon-pushpin"></span>Staging area</h2>
 </div>
 <div class="panel-body">
-<p>If you think of Git as taking snapshots of changes over the life of a project, <code>git add</code> specifies <em>what</em> will go in a snapshot (putting things in the staging area), and <code>git commit</code> then <em>actually takes</em> the snapshot, and makes a permanent record of it (as a commit). If you don’t have anything staged when you type <code>git commit</code>, Git will prompt you to use <code>git commit -a</code> or <code>git commit --all</code>, which is kind of like gathering <em>everyone</em> for the picture! However, it’s almost always better to explicitly add things to the staging area, because you might commit changes you forgot you made. (Going back to snapshots, you might get the extra with incomplete makeup walking on the stage for the snapshot because you used <code>-a</code>!) Try to stage things manually, or you might find yourself searching for “git undo commit” more than you would like!</p>
+<p>If you think of Git as taking snapshots of changes over the life of a project, <code>git add</code> specifies <em>what</em> will go in a snapshot (putting things in the staging area), and <code>git commit</code> then <em>actually takes</em> the snapshot, and makes a permanent record of it (as a commit). If you don’t have anything staged when you type <code>git commit</code>, Git will prompt you to use <code>git commit -a</code> or <code>git commit --all</code>, which is kind of like gathering <em>everyone</em> for the picture! However, it’s almost always better to explicitly add things to the staging area, because you might commit changes you forgot you made. Try to stage things manually, or you might find yourself searching for “git undo commit” more than you would like!</p>
 </div>
 </aside>
 <div class="figure">
@@ -235,14 +235,7 @@ $ git commit -m &quot;my recent changes&quot;</code></pre></li>
 </ol>
 </div>
 </section>
-<section class="challenge panel panel-success">
-<div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pencil"></span><code>bio</code> Repository</h2>
-</div>
-<div class="panel-body">
-<p>Create a new Git repository on your computer called <code>bio</code>. Write a three-line biography for yourself in a file called <code>me.txt</code>, commit your changes, then modify one line, add a fourth line, and display the differences between its updated state and its original state.</p>
-</div>
-</section>
+<p>Next: <a href="05-history.html">Exploring History</a></p>
         </div>
       </div>
       </article>

@@ -160,10 +160,8 @@ recent commit (`HEAD~1`), which is commit `f22b25e`:
 
 ![Git Checkout](fig/git-checkout.svg)
 
-Putting it all together:
-
-> ## How Git works, in cartoon form {.callout}
-> ![http://figshare.com/articles/How_Git_works_a_cartoon/1328266](fig/git_staging.svg)
+> ## Lifecycle Changes in Git {.callout}
+> ![Changes for a single file in a Git repository](fig/git-lifecycle-changes.png)
 
 > ## Simplifying the Common Case {.callout}
 >
@@ -180,7 +178,7 @@ Putting it all together:
 > without it,
 > Git would try to use the name of the file as the commit identifier.
 
-The fact that files can be reverted one by one
+The fact that files can be reverted one-by-one
 tends to change the way people organize their work.
 If everything is in one large document,
 it's hard (but not impossible) to undo changes to the introduction
@@ -220,6 +218,5 @@ moving backward and forward in time becomes much easier.
 >     ~~~
 >     $ git checkout <unique ID of last commit> data_cruncher.py
 >     ~~~
-> 5. Both 2 & 4
 
 Next: [Ignoring Things](06-ignore.html)

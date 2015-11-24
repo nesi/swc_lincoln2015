@@ -104,3 +104,6 @@ by acting as a shareable electronic lab notebook for computational work:
 > using only what they can find in your papers or on the web.
 > Try to do the same for one of their results,
 > then try to do it for a result from a lab you work with.
+
+Next: [Licensing](11-licensing.html)
+

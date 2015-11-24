@@ -15,10 +15,11 @@ when we begin to collaborate with other people.
 We already have most of the machinery we need to do this;
 the only thing missing is to copy changes from one repository to another.
 
+> ## Local vs. Remote Repositories in Git {.callout}
+> ![Relationship between local and remote repositories](fig/git-remote-repos.png)
+
 Systems like Git allow us to move work between any two repositories.
-In practice,
-though,
-it's easiest to use one copy as a central hub,
+In practice, though, it's easiest to use one copy as a central hub,
 and to keep it on the web rather than on someone's laptop.
 Most programmers use hosting services like
 [GitHub](http://github.com),
@@ -29,7 +30,7 @@ we'll explore the pros and cons of this in the final section of this lesson.
 
 Let's start by sharing the changes we've made to our current project with the world.
 Log in to GitHub,
-then click on the icon in the top right corner to create a new repository called `planets`:
+then click on the icon in the top right corner to create a new repository:
 
 ![Creating a Repository on GitHub (Step 1)](fig/github-create-repo-01.png)
 
@@ -42,51 +43,12 @@ GitHub displays a page with a URL and some information on how to configure your 
 
 ![Creating a Repository on GitHub (Step 3)](fig/github-create-repo-03.png)
 
-This effectively does the following on GitHub's servers:
-
-~~~ {.bash}
-$ mkdir planets
-$ cd planets
-$ git init
-~~~
-
-Our local repository still contains our earlier work on `mars.txt`,
-but the remote repository on GitHub doesn't contain any files yet:
-
-![Freshly-Made GitHub Repository](fig/git-freshly-made-github-repo.svg)
-
-The next step is to connect the two repositories.
-We do this by making the GitHub repository a [remote](reference.html#remote)
-for the local repository.
-The home page of the repository on GitHub includes
-the string we need to identify it:
-
-![Where to Find Repository URL on GitHub](fig/github-find-repo-string.png)
-
-Click on the 'HTTPS' link to change the [protocol](reference.html#protocol) from SSH to HTTPS.
-
-> ## HTTPS vs SSH {.callout}
->
-> We use HTTPS here because it does not require additional configuration.
-> After the workshop you may want to set up SSH access, which is a bit more
-> secure, by following one of the great tutorials from
-> [GitHub](https://help.github.com/articles/generating-ssh-keys),
-> [Atlassian/BitBucket](https://confluence.atlassian.com/display/BITBUCKET/Set+up+SSH+for+Git)
-> and [GitLab](https://about.gitlab.com/2014/03/04/add-ssh-key-screencast/)
-> (this one has a screencast).
-
-![Changing the Repository URL on GitHub](fig/github-change-repo-string.png)
-
-Copy that URL from the browser,
-go into the local `planets` repository,
+Copy the repository URL from the browser into the copy/paste buffer, go to the local `planets` repository,
 and run this command:
 
 ~~~ {.bash}
-$ git remote add origin https://github.com/vlad/planets.git
+$ git remote add origin https://github.com/<your-github-user-name>/planets.git
 ~~~
-
-Make sure to use the URL for your repository rather than Vlad's:
-the only difference should be your username instead of `vlad`.
 
 We can check that the command has worked by running `git remote -v`:
 
@@ -94,8 +56,8 @@ We can check that the command has worked by running `git remote -v`:
 $ git remote -v
 ~~~
 ~~~ {.output}
-origin   https://github.com/vlad/planets.git (push)
-origin   https://github.com/vlad/planets.git (fetch)
+origin   https://github.com/<your-github-user-name>/planets.git (push)
+origin   https://github.com/<your-github-user-name>/planets.git (fetch)
 ~~~
 
 The name `origin` is a local nickname for your remote repository:
@@ -139,30 +101,6 @@ Branch master set up to track remote branch master from origin.
 > $ git config --global --unset https.proxy
 > ~~~
 
-> ## Password Managers {.callout}
->
-> If your operating system has a password manager configured, `git push` will
-> try to use it when it needs your username and password. If you want to type
-> your username and password at the terminal instead of using
-> a password manager, type:
->
-> ~~~ {.bash}
-> $ unset SSH_ASKPASS
-> ~~~
->
-> You may want to add this command at the end of your `~/.bashrc` to make it the
-> default behavior.
-
-Our local and remote repositories are now in this state:
-
-![GitHub Repository After First Push](fig/github-repo-after-first-push.svg)
-
-> ## The '-u' Flag {.callout}
->
-> You may see a `-u` option used with `git push` in some documentation.
-> It is related to concepts we cover in our intermediate lesson,
-> and can safely be ignored for now.
-
 We can pull changes from the remote repository to the local one as well:
 
 ~~~ {.bash}
@@ -177,8 +115,7 @@ Already up-to-date.
 Pulling has no effect in this case
 because the two repositories are already synchronized.
 If someone else had pushed some changes to the repository on GitHub,
-though,
-this command would download them to our local repository.
+though, this command would download them to our local repository.
 
 > ## GitHub Timestamp {.challenge}
 >
@@ -187,3 +124,6 @@ this command would download them to our local repository.
 > Make changes to your local repository and push these changes.
 > Go to the repo you just created on Github and check the [timestamps](reference.html#timestamp) of the files.
 > How does GitHub record times, and why?
+
+Next: [Collaborating](08-collab.html)
+

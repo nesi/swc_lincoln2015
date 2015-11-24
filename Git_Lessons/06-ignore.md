@@ -119,3 +119,6 @@ $ git status --ignored
 
 nothing to commit, working directory clean
 ~~~
+
+Next: [Remotes in GitHub](07-github.html)
+

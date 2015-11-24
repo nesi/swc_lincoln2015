@@ -97,3 +97,6 @@ Fast-forward
  1 file changed, 1 insertion(+)
  create mode 100644 pluto.txt
 ~~~
+
+Next: [Conflicts](09-conflict.html)
+

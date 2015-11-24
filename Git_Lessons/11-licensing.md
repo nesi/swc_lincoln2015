@@ -142,3 +142,6 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
 > Can you do this unilaterally,
 > or do you need permission from someone in your institution?
 > If so, who?
+
+Next: [Hosting](12-hosting.html)
+

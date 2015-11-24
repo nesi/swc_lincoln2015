@@ -40,6 +40,7 @@
 </ul>
 </div>
 </section>
+<p>Git history can be viewed as a chain of commits. The most recent end of the chain is referred to as <code>HEAD</code>; we can refer to previous commits using the <code>~</code> notation, so <code>HEAD~1</code> (pronounced “head minus one”) means “the previous commit”, while <code>HEAD~123</code> goes back 123 commits from where we are now.</p>
 <p>If we want to see what we changed at different steps, we can use <code>git diff</code> again, but with the notation <code>HEAD~1</code>, <code>HEAD~2</code>, and so on, to refer to old commits:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff HEAD~1 mars.txt</code></pre>
 <pre class="output"><code>diff --git a/mars.txt b/mars.txt
@@ -59,8 +60,7 @@ index df0654a..b36abfd 100644
  Cold and dry, but everything is my favorite color
 +The two moons may be a problem for Wolfman
 +But the Mummy will appreciate the lack of humidity</code></pre>
-<p>In this way, we can build up a chain of commits. The most recent end of the chain is referred to as <code>HEAD</code>; we can refer to previous commits using the <code>~</code> notation, so <code>HEAD~1</code> (pronounced “head minus one”) means “the previous commit”, while <code>HEAD~123</code> goes back 123 commits from where we are now.</p>
-<p>We can also refer to commits using those long strings of digits and letters that <code>git log</code> displays. These are unique IDs for the changes, and “unique” really does mean unique: every change to any set of files on any computer has a unique 40-character identifier. Our first commit was given the ID f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let’s try this:</p>
+<p>We can also refer to commits using commit hashes which appear as long strings of digits and letters that <code>git log</code> displays. These are unique IDs for the changes, and “unique” really does mean unique: every change to any set of files on any computer has a unique 40-character identifier. Our first commit was given the ID f22b25e3233b4645dabd0d81e651fe074bd8e73b, so let’s try this:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">git</span> diff f22b25e3233b4645dabd0d81e651fe074bd8e73b mars.txt</code></pre>
 <pre class="output"><code>diff --git a/mars.txt b/mars.txt
 index df0654a..b36abfd 100644
@@ -82,6 +82,9 @@ index df0654a..b36abfd 100644
 +But the Mummy will appreciate the lack of humidity</code></pre>
 <p>All right! So we can save changes to files and see what we’ve changed—now how can we restore older versions of things? Let’s suppose we accidentally overwrite our file:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash">$ <span class="kw">nano</span> mars.txt
+<span class="co"># ...</span>
+<span class="co"># ... Make changes to the file and save it</span>
+<span class="co"># ...</span>
 $ <span class="kw">cat</span> mars.txt</code></pre>
 <pre class="output"><code>We will need to manufacture our own oxygen</code></pre>
 <p><code>git status</code> now tells us that the file has been changed, but those changes haven’t been staged:</p>
@@ -106,14 +109,13 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <div class="figure">
 <img src="fig/git-checkout.svg" alt="Git Checkout" /><p class="caption">Git Checkout</p>
 </div>
-<p>So, to put it all together:</p>
 <aside class="callout panel panel-info">
 <div class="panel-heading">
-<h2><span class="glyphicon glyphicon-pushpin"></span>How Git works, in cartoon form</h2>
+<h2><span class="glyphicon glyphicon-pushpin"></span>Lifecycle Changes in Git</h2>
 </div>
 <div class="panel-body">
 <div class="figure">
-<img src="fig/git_staging.svg" alt="http://figshare.com/articles/How_Git_works_a_cartoon/1328266" /><p class="caption">http://figshare.com/articles/How_Git_works_a_cartoon/1328266</p>
+<img src="fig/git-lifecycle-changes.png" alt="Changes for a single file in a Git repository" /><p class="caption">Changes for a single file in a Git repository</p>
 </div>
 </div>
 </aside>
@@ -122,12 +124,12 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <h2><span class="glyphicon glyphicon-pushpin"></span>Simplifying the Common Case</h2>
 </div>
 <div class="panel-body">
-<p>If you read the output of <code>git status</code> carefully, you’ll see that it includes this hint:</p>
+<p>As you can see the output of <code>git status</code> includes this hint:</p>
 <pre class="sourceCode bash"><code class="sourceCode bash"><span class="kw">(use</span> <span class="st">&quot;git checkout -- &lt;file&gt;...&quot;</span> to discard changes in working directory<span class="kw">)</span></code></pre>
 <p>As it says, <code>git checkout</code> without a version identifier restores files to the state saved in <code>HEAD</code>. The double dash <code>--</code> is needed to separate the names of the files being recovered from the command itself: without it, Git would try to use the name of the file as the commit identifier.</p>
 </div>
 </aside>
-<p>The fact that files can be reverted one by one tends to change the way people organize their work. If everything is in one large document, it’s hard (but not impossible) to undo changes to the introduction without also undoing changes made later to the conclusion. If the introduction and conclusion are stored in separate files, on the other hand, moving backward and forward in time becomes much easier.</p>
+<p>The fact that files can be reverted one-by-one tends to change the way people organize their work. If everything is in one large document, it’s hard (but not impossible) to undo changes to the introduction without also undoing changes made later to the conclusion. If the introduction and conclusion are stored in separate files, on the other hand, moving backward and forward in time becomes much easier.</p>
 <section class="challenge panel panel-success">
 <div class="panel-heading">
 <h2><span class="glyphicon glyphicon-pencil"></span>Recovering Older Versions of a File</h2>
@@ -140,10 +142,10 @@ But the Mummy will appreciate the lack of humidity</code></pre>
 <li><pre><code>$ git checkout HEAD data_cruncher.py</code></pre></li>
 <li><pre><code>$ git checkout HEAD~1 data_cruncher.py</code></pre></li>
 <li><pre><code>$ git checkout &lt;unique ID of last commit&gt; data_cruncher.py</code></pre></li>
-<li>Both 2 &amp; 4</li>
 </ol>
 </div>
 </section>
+<p>Next: <a href="06-ignore.html">Ignoring Things</a></p>
         </div>
       </div>
       </article>
