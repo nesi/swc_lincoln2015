@@ -50,10 +50,6 @@ to be shared can and should be stored in a version control system.
 > Some previous experience with the shell is expected,
 > *but isn't mandatory*.
 
-> ## Getting ready {.getready}
->
-> Nothing to do: you're ready to go!
-
 ## Topics
 
 1.  [Version Control Introduction](01-basics.html)
