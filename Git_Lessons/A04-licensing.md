@@ -2,13 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Licensing
-minutes: 10
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Explain why adding licensing and citation information to a project repository is important.
-> *   Choose a proper license.
-> *   Explain differences in licensing and social expectations.
 
 When a repository with source code, a manuscript
 or other creative works becomes public, it should include a
@@ -143,5 +137,4 @@ Greg Wilson: "Software Carpentry: Lessons Learned". arXiv:1307.5448, July 2013.
 > or do you need permission from someone in your institution?
 > If so, who?
 
-Next: [Hosting](12-hosting.html)
 

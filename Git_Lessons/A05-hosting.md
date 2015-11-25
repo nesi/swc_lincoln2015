@@ -2,21 +2,15 @@
 layout: page
 title: Version Control with Git
 subtitle: Hosting
-minutes: 10
 ---
-> ## Learning Objectives {.objectives}
->
-> *   Explain different options for hosting scientific work.
 
 The second big question for groups that want to open up their work
 is where to host their code and data.
 One option is for the lab, the department, or the university to provide a server,
-manage accounts and backups,
-and so on.
+manage accounts and backups, and so on.
 The main benefit of this is that it clarifies who owns what,
 which is particularly important if any of the material is sensitive
-(i.e.,
-relates to experiments involving human subjects
+(i.e., relates to experiments involving human subjects
 or may be used in a patent application).
 The main drawbacks are the cost of providing the service and its longevity:
 a scientist who has spent ten years collecting data

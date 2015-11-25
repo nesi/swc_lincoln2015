@@ -56,7 +56,7 @@ to be shared can and should be stored in a version control system.
 
 ## Topics
 
-1.  [Automated Version Control](01-basics.html)
+1.  [Version Control Introduction](01-basics.html)
 2.  [Setting Up Git](02-setup.html)
 3.  [Creating a Repository](03-create.html)
 4.  [Tracking Changes](04-changes.html)
@@ -65,13 +65,26 @@ to be shared can and should be stored in a version control system.
 7.  [Remotes in GitHub](07-github.html)
 8.  [Collaborating](08-collab.html)
 9.  [Conflicts](09-conflict.html)
-10. [Open Science](10-open.html)
-11. [Licensing](11-licensing.html)
-12. [Hosting](12-hosting.html)
 
-## Other Resources
 
-*   [Reference](reference.html)
-*   [Discussion](discussion.html)
-*   [Instructor's Guide](instructors.html)
+## Additional Material
+
+1.   [Git & R-Studio](A01-gitrstudio.html)
+2.   [Other Git Commands](A02-advanced.html)
+3.   [Open Science](A03-open.html)
+4.   [Licensing](A04-licensing.html)
+5.   [Hosting](A05-hosting.html)
+6.   [Instructor's Guide](A06-instructors.html)
+7.   [Reference & Glossary](A07-reference.html)
+
+## Further Reading
+
+The entire Pro Git book, written by Scott Chacon and Ben Straub and published by Apress,
+is available from [https://git-scm.com/book/en/v2](https://git-scm.com/book/en/v2).
+All content is licensed under the
+[Creative Commons Attribution Non Commercial Share Alike 3.0 license](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+Print versions of the book are available on [Amazon.com](Amazon.com).
+
+[![Pro Git (2nd edition), https://git-scm.com/book/en/v2](fig/progit-book-cover.jpg)](https://git-scm.com/book/en/v2)
+
 

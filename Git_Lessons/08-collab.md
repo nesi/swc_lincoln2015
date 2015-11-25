@@ -43,6 +43,9 @@ The Collaborator can now make a change in his or her copy of the repository:
 ~~~ {.bash}
 $ cd planets
 $ nano pluto.txt
+# ...
+# ... Make changes and save the file.
+# ...
 $ cat pluto.txt
 ~~~
 ~~~ {.output}

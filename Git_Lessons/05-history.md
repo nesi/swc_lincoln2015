@@ -100,7 +100,7 @@ Let's suppose we accidentally overwrite our file:
 ~~~ {.bash}
 $ nano mars.txt
 # ...
-# ... Make changes to the file and save it
+# ... Make changes and save the file.
 # ...
 $ cat mars.txt
 ~~~

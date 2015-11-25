@@ -161,6 +161,9 @@ you may use a different editor, and the `cat` command is optional.)
 
 ~~~ {.bash}
 $ nano mars.txt
+# ...
+# ... Make changes and save the file.
+# ...
 $ cat mars.txt
 ~~~
 ~~~ {.output}
@@ -298,6 +301,9 @@ we'll add another line to the file:
 
 ~~~ {.bash}
 $ nano mars.txt
+# ...
+# ... Make changes and save the file.
+# ...
 $ cat mars.txt
 ~~~
 ~~~ {.output}

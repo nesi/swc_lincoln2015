@@ -16,7 +16,7 @@ different changes to each copy.  Version control helps us manage these
 [conflicts](reference.html#conflicts) by giving us tools to
 [resolve](reference.html#resolve) overlapping changes.
 
-To see how we can resolve conflicts, we must first create one.  The file
+To see how we can resolve conflicts, we must first create one. The file
 `mars.txt` currently looks like this in both partners' copies of our `planets`
 repository:
 
@@ -33,6 +33,9 @@ Let's add a line to one partner's copy only:
 
 ~~~ {.bash}
 $ nano mars.txt
+# ...
+# ... Make changes and save the file.
+# ...
 $ cat mars.txt
 ~~~
 ~~~ {.output}
@@ -268,5 +271,4 @@ or find a way to divide the work up differently.
 > when there is a conflict in an image or some other non-textual file
 > that is stored in version control?
 
-Next: [Open Science](10-open.html)
 

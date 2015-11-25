@@ -2,11 +2,7 @@
 layout: page
 title: Version Control with Git
 subtitle: Open Science
-minutes: 5
 ---
-> ## Learning Objectives {.objectives}
->
-> *  Explain how a version control system can be leveraged as an electronic lab notebook for computational work.
 
 > The opposite of "open" isn't "closed".
 > The opposite of "open" is "broken".
@@ -105,5 +101,4 @@ by acting as a shareable electronic lab notebook for computational work:
 > Try to do the same for one of their results,
 > then try to do it for a result from a lab you work with.
 
-Next: [Licensing](11-licensing.html)
 
